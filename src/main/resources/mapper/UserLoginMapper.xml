@@ -19,5 +19,13 @@
         where username = #{username}
     </select>
 
+    <select id="getUser" parameterType="com.example.bootdemo.pojo.UserLogin"
+            resultType="com.example.bootdemo.pojo.UserLogin">
+        select *
+        from userLogin
+        where username = #{username}
+          and password = #{password}
+    </select>
+
 </mapper>
 

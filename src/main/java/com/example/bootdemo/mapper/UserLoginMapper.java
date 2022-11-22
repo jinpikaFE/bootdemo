@@ -15,4 +15,6 @@ public interface UserLoginMapper {
 
     // 根据用户名查询数据
     public UserLogin queryByName(String username);
+
+    public UserLogin getUser(UserLogin userLogin);
 }

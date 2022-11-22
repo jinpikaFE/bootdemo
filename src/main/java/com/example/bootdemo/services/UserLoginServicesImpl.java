@@ -26,4 +26,9 @@ public class UserLoginServicesImpl implements UserLoginServicesI {
     public UserLogin queryByName(String username) {
         return userLoginMapper.queryByName(username);
     }
+
+    @Override
+    public UserLogin getUser(UserLogin userLogin) {
+        return userLoginMapper.getUser(userLogin);
+    }
 }
