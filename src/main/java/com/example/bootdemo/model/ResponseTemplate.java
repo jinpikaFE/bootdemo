@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ResponseTemplate {
+public class ResponseTemplate<T> {
     public Integer code;
     public String message;
-    public Object data;
+    public T data;
 }

@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import redis.clients.jedis.Jedis;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value = "/userInfo", produces = "application/json;charset=UTF-8")
 public class DemoController {
@@ -31,8 +29,12 @@ public class DemoController {
      */
     @GetMapping("/list")
     @AuthToken
-    public List<UserLogin> list() {
-        return userLoginServicesImpl.queryAll();
+    public ResponseTemplate list() {
+        return ResponseTemplate.builder()
+                .code(200)
+                .message("success")
+                .data(userLoginServicesImpl.queryAll())
+                .build();
     }
 
     /**
