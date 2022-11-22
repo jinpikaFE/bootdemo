@@ -46,8 +46,8 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         // 如果打上了AuthToken注解则需要验证token
         if (method.getAnnotation(AuthToken.class) != null || handlerMethod.getBeanType().getAnnotation(AuthToken.class) != null) {
 
-//            String token = request.getHeader(httpHeaderName);
-            String token = request.getParameter(httpHeaderName);
+            String token = request.getHeader(httpHeaderName);
+//            String token = request.getParameter(httpHeaderName);
             log.info("Get token from request is {} ", token);
             String username = "";
             Jedis jedis = new Jedis("127.0.0.1", 6379);
